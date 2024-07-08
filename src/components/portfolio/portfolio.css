@@ -1,0 +1,341 @@
+#portfolio{
+    position: relative;
+}
+
+.portfolio{
+    height: 100%;
+}
+
+.section_desc{
+    font-size: 20px;
+}
+
+.portfolio_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.portfolio_item {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    transition: ease .2s;
+}
+
+.portfolio_item:hover {
+    box-shadow: 0 7px 10px rgba(0,0,0,0.1);
+}
+
+.portfolio_img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #01122240;
+}
+
+.portfolio_title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 5px 0 0 0;
+    color: #011222c9;
+}
+
+.portfolio_tools {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.tools_items {
+    display: inline-flex;
+    align-items: center;
+    background-color: #adadad50;
+    border-radius: 2px;
+    padding: 3px;
+    width: auto;
+    margin: 5px 5px 0 0;
+}
+
+.tools_items_img img {
+    width: 15px; 
+    height: 15px; 
+    margin-right: 6px;
+    display: flex;
+}
+
+.tools_items small{
+    color: #011222e3;
+    font-weight: 600;
+    font-size: .7rem;
+}
+
+.portfolio_desc {
+    font-size: .8rem;
+    color: #666;
+}
+
+.portfolio_buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 6px 12px;
+    font-size: .75rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.details_btn {
+    background-color: var(--primary-color);
+    color: white;
+    align-items: center;
+    gap: .4rem;
+}
+
+.details_btn .icon{
+    background-color: #fff;
+    color: var(--primary-color);
+    padding: 3px;
+    border-radius: 50%;
+}
+
+.details_btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.preview_btn {
+    background: transparent;
+    border: 1.6px solid var(--primary-color);
+    color: var(--primary-color);
+    align-items: center;
+    gap: .4rem;
+}
+
+.preview_btn:hover {
+    background-color: #011222e5;
+    border: 2px solid #011222e5;
+    color: #fff;
+}
+
+.section_desc {
+    font-size: 20px;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.modal_content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+  
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.modal_content.zoom-in {
+    animation: zoomIn 0.2s ease-in-out;
+}
+
+.modal_content.zoom-out {
+    animation: zoomOut 0.2s ease-in-out;
+}
+
+.close_button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.close_button:hover {
+    color: #e53e3e;
+}
+
+  /* Backdrop filter blur */
+.blur {
+    filter: blur(12px);
+    transition: filter 0s;
+}
+
+/* modal content */
+.modal_content {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal_title{
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #011222c9;
+    font-weight: 600;
+}
+
+.modal_desc_title{
+    font-size: 1rem;
+    margin: 5px 0 5px 0;
+    color: #011222c9;
+    font-weight: 600;
+}
+
+.modal_desc{
+    font-size: .8rem;
+}
+
+.modal_button{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.repo_btn{
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    border: 1.6px solid #011222e5;
+    color: #011222e5;
+    font-weight: 500;
+}
+
+.icons{
+    font-size: 1rem;
+}
+
+.repo_btn:hover{
+    font-weight: 500;
+    color: #FFF;
+    background-color: #011222e5;
+}
+
+.closes_btn{
+    background-color: #e53e3e;
+    color: #fff;
+    font-weight: 500;
+
+    border: 1px solid transparent;
+}
+
+.closes_btn:hover{
+    box-shadow: 0px 0px 5px 1px #e53e3e;
+}
+/* Modal End */
+
+/* all courses button */
+.all-project-btn{
+    width: fit-content;
+    margin: 1.5rem auto 0;
+    padding: 10px 18px;
+    align-items: center;
+    gap: .4rem;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    background-color: var(--primary-color);
+    color: #fff;
+
+    transition: ease .3s ;
+}
+
+.all-project-btn:hover{
+    background-color: var(--secondary-color);
+}
+
+.all-project-btn .icon{
+    background-color: #fff;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    padding: 3px;
+    border-radius: 50%;
+}
+
+
+
+/* Large */
+@media screen and (max-width : 1024px){
+
+}
+
+/* buat card */
+@media screen and (max-width : 992px){
+    .portfolio_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* ------- */
+
+/* Medium */
+@media screen and (max-width : 768px){
+    
+}
+
+/* buat modal */
+@media screen and (max-width : 614px){
+    .portfolio_container {
+        grid-template-columns: 1fr;
+    }
+    .modal_content {
+        max-width: 85%; 
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+/* end modal */
+
+@media screen and (max-width : 576px){
+
+}
+
+/* Small */
+@media screen and (max-width : 350px){
+
+}

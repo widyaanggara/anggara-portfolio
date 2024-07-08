@@ -1,0 +1,284 @@
+/* ========== Google Font ========== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ========== Root Variable ========== */
+:root{
+    --header-height : 3rem;
+    --hue : 0;
+    --sat : 0%;
+    --container-color : #fff;
+    --body-color : hsl(var(--hue), var(--sat), 98%);
+    --text-color : hsl(var(--hue), var(--sat), 46%);
+    --primary-color : #1694ba;
+    --secondary-color : #086989;
+
+    /* 4db5ff */
+
+    --box-shadow : 0 0 8px #086989;
+
+    --container-width-lg : 70%;
+    --container-width-md : 80%;
+    --container-width-sm : 85%;
+
+    /* ========== Font Size ========== */
+    --big-font : 3.3rem;
+    --h1-font : 2.25rem;
+    --h2-font : 1.5rem;
+    --h3-font : 1.25rem;
+    --normal-font : 1rem;
+    --small-font : 0.9rem;
+    --smaller-font : 0.813rem;
+    --tiny-font : 0.625rem;
+
+    /* ========== Font Weight ========== */
+    --font-normal : 400;
+    --font-medium : 500;
+    --font-semi-bold : 600;
+
+    /* ========== Z Index ========== */
+    --z-tooltip : 10;
+    --z-fixed : 100;
+    --z-modal : 1000;
+}
+
+/* Responsive Typography */
+@media screen and (max-width : 992px){
+    :root{
+        --big-font : 2.75rem;
+        --h1-font : 1.8rem;
+        --h2-font : 1.25rem;
+        --h3-font : 1rem;
+        --normal-font : 0.938rem;
+        --small-font : 0.9rem;
+        --smaller-font : 0.75rem;
+    }
+}
+
+/* ========== Base ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+body,
+button,
+input,
+textarea{
+    font-family: "Poppins", sans-serif;
+    font-size: var(--normal-font);
+}
+
+body{
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3{
+    color: var(--primary-color);
+    font-weight: var(--font-semi-bold);
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========== CSS Class ==========*/
+.section{
+    padding: 6rem 0 2rem;
+}
+
+.section_title{
+    font-size: var(--h1-font);
+    color: var(--primary-color);
+}
+
+.section_subtitle{
+    display: block;
+    font-size: var(--normal-font);
+    margin-bottom: 4rem;
+}
+
+.section_title,
+.section_subtitle{
+    text-align: center;
+}
+
+
+/* ========== LayOut ========== */
+.container{
+    max-width: var(--container-width-lg);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+.flex{
+    display: flex;
+}
+
+/* ========== Button ========== */
+.button{
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--container-color);
+    padding: .95rem 1.9rem;
+    border-radius: 1rem;
+    font-weight: var(--font-medium);
+
+    transition: ease .3s;
+}
+
+.button:hover{
+    background: var(--secondary-color);
+    box-shadow: var(--box-shadow);
+}
+
+.button__icon{
+    margin-left: 0.5rem;
+}
+
+.button--flex{
+    display: inline-flex;
+    align-items: center;
+}
+
+
+
+/* ========== dot ========== */
+.dot {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 2%;
+    bottom: 50%;
+    gap: .5rem;
+    align-items: flex-end;
+}
+
+.dot-content {
+    width: 6.5px;
+    height: 6.5px;
+    background-color: hsl(var(--hue), var(--sat), 75%);
+    border-radius: 50%;
+    position: relative;
+
+    transition: ease .3s;
+}
+
+.dot-content:hover {
+    background-color: var(--primary-color);
+}
+
+.dot-content.active {
+    background-color: var(--primary-color);
+}
+/* dot end */
+
+/* Sosial */
+.sosial{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 20px;
+    bottom: 13%;
+    gap: .5rem;
+    align-items: flex-end;
+}
+
+.sosial-icon{
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 0 4px #0869892b;
+    display: flex;
+    align-items: center;
+    transition: ease .4s;
+}
+
+.sosial-icon:hover{
+    color: var(--secondary-color);
+    box-shadow: 0 0 6px #0869898a;
+}
+
+
+/* ========== Breakpoints ========== */
+/* Large */
+@media screen and (max-width : 1024px){
+    .container{
+        max-width: var(--container-width-md);
+    }
+
+    .section{
+        padding: 7rem 0 4rem;
+    }
+
+    .button{
+        padding: 1rem 1.75rem;
+    }
+
+    .button__icon{
+        width: 22px;
+        height: 22px;
+    }
+
+    .dot{
+        display: none;
+    }
+
+    .sosial{
+        display: none;
+    }
+}
+
+/* Medium */
+@media screen and (max-width : 768px){
+
+}
+
+@media screen and (max-width : 576px){
+    .container{
+        max-width: var(--container-width-sm);
+    }
+
+    .section{
+        padding: 5rem 0 4rem;
+    }
+}
+
+/* Small */
+@media screen and (max-width : 350px){
+    :root{
+        --big-font:2.25rem;
+    }
+}
+
